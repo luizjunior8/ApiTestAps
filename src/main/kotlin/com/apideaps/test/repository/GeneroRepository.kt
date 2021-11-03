@@ -8,6 +8,6 @@ import java.util.*
 
 @Repository
 interface GeneroRepository : JpaRepository <Genero, Long>{
-    @Query("select * from Genero where nome = :nome", nativeQuery = true)
+    @Query("select * from Genero where lower(nome) like lower(concat('%', :nome, '%'))", nativeQuery = true)
     fun buscarPeloNome(nome: String): Optional<List<Genero>>
 }
