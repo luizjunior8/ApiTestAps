@@ -5,9 +5,9 @@ import javax.persistence.*
 @Entity
 class Genero(
     @Column(nullable = false)
-    val nome: String,
+    var nome: String,
     @Column(nullable = true)
-    val descricao: String?
+    var descricao: String?
 ){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
